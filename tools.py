@@ -1,3 +1,4 @@
+import gymnasium as gym # environnement.
 import numpy as np # manipulation de matrices.
 import matplotlib.pyplot as plt # affichage des graphiques.
 import tensorflow as tf # deep learning.
@@ -116,7 +117,7 @@ class Agent():
         if np.random.uniform(0, 1) < epsilon: # Exploration.
             return self.env.action_space.sample()
         else: # Exploitation.
-            self.action(state)
+            return self.action(state)
 
     # Retourne l'action à effectuer.
     def action(self, state):
